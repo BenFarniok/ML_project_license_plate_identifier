@@ -10,7 +10,7 @@ app = Flask(__name__)
 @app.route("/")
 def home():
     
-    return render_template("landing_page.html")
+    return render_template("index.html")
 
 # Route to render index.html template using data from Mongo
 @app.route('/handle_data', methods=['POST'])
@@ -34,14 +34,11 @@ def handle_data():
         # required library
         import cv2
         import numpy as np
-        import matplotlib.pyplot as plt
-        import matplotlib.gridspec as gridspec
         from local_utils import detect_lp
         from os.path import splitext,basename
         from keras.models import model_from_json
         from sklearn.preprocessing import LabelEncoder
         import glob
-        import urllib.request
 
         def get_opencv_img_from_buffer(buffer, flags):
             bytes_as_np_array = np.frombuffer(buffer.read(), dtype=np.uint8)
