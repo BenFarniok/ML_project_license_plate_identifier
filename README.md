@@ -26,17 +26,17 @@ Once finished with the project, one can close out the Flask app by hitting 'CTRL
 
 The projects work with machine learning is the lynchpin to this entire project, and understanding it is key to understanding the work that went in to making it functional.
 
-![landing_page](Images\starting_page.jpg)
+![landing_page](https://github.com/BenFarniok/ML_project_license_plate_identifier/raw/master/Images/starting_page.jpg)
 
 Upon the introduction of the image, the html passes the image to the Flask App using the "POST" method, which will run the 'plate_reader' function.
 
 There-in, converted into an array format that is legible to OPENCV, which begins to process the image. First, it will search for license plates in the image by looking for rectangular shapes that would match a profile of a plate.
 
-![plate_finder](Images\plate_finder.jpg)
+![plate_finder](https://github.com/BenFarniok/ML_project_license_plate_identifier/raw/master/Images/plate_finder.jpg)
 
 Then will render the image into greyscale and blurry before using adaptive binarization to render it into black and white.
 
-![processing](Images\plate_processor.jpg)
+![processing](https://github.com/BenFarniok/ML_project_license_plate_identifier/raw/master/Images/plate_processor.jpg)
 
 From there, the newly-binarized image is looked over for countours that occupy atleast 40 percent of the identified plates height, assuming those will be characters.
 
@@ -44,14 +44,14 @@ From there, the newly-binarized image is looked over for countours that occupy a
 
 After that, it applies the pre-built model "wpod-net" which was trained on a series of binarized images to identify characters.
 
-![binarized](Images\separated_characters.jpg)
+![binarized](https://github.com/BenFarniok/ML_project_license_plate_identifier/raw/master/Images/separated_characters.jpg)
 
 The "plate_reader" function returns a string to the Flask app, which is used to make an API call to identify the Vehicle Identification Number (VIN).
 
-![final_result](Images\final_result.jpg)
+![final_result](https://github.com/BenFarniok/ML_project_license_plate_identifier/raw/master/Images/final_result.jpg)
 
 This VIN, in turn, is used to retrieve information about the make, model and year of the vehicle.
 
-![returned_page](Images\returned.jpg)
+![returned_page](https://github.com/BenFarniok/ML_project_license_plate_identifier/raw/master/Images/returned.jpg)
 
 With further development, the web-app could also be used to find further information about the vehicle, including Kelly Blue Book value and accident history.
