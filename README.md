@@ -40,7 +40,7 @@ Then will render the image into greyscale and blurry before using adaptive binar
 
 From there, the newly-binarized image is looked over for countours that occupy atleast 40 percent of the identified plates height, assuming those will be characters.
 
-![contour](Images\countour_finder.jpg)
+![contour](https://github.com/BenFarniok/ML_project_license_plate_identifier/raw/master/Images/countour_finder.jpg)
 
 After that, it applies the pre-built model "wpod-net" which was trained on a series of binarized images to identify characters.
 
